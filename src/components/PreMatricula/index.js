@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import MaskedInput from 'react-text-mask'
-import { InputBox, InputBoxInput, Label, InputSubmit } from './styled'
+import { Container, InputBox, InputBoxInput, Label, InputSubmit } from './styled'
 
 
 const PreMatricula = () => {
@@ -62,7 +62,8 @@ const PreMatricula = () => {
     }
 
     return (
-        
+        <Container>
+            <div className="content">
         <form onSubmit={handleSubmit}>
             <InputBox>
                 <InputBoxInput 
@@ -94,22 +95,13 @@ const PreMatricula = () => {
                 />
                 <Label>Email</Label>
             </InputBox>
-            <InputBox>
-                <InputBoxInput mask={[/\d/, /\d/, /\d/, /\d/,]}
-                type="text" 
-                value={token}
-                onChange={e => setToken(e.target.value)}
-                render={(ref, props) => (
-                    <InputBoxInput ref={ref} {...props} />
-                  )}
-                />
-                <Label>Código do Consultor ( opcional )</Label>
-            </InputBox>
             <InputSubmit 
             type="submit" 
             value="Enviar"
             />
         </form>
+        </div>
+        </Container>
     );
 }
 

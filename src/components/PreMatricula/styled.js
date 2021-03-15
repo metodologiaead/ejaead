@@ -1,16 +1,31 @@
 import styled from 'styled-components'
 import media from 'styled-media-query'
 
+export const Container = styled.section`
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+
+    width: 100%;
+    min-height: 100vh;
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+
+        max-width: 1024px;
+        min-height: 100vh;
+    }
+`
 
 export const Form = styled.form`
     display: flex;
     flex-direction: column;
-    margin: 0;
 `
 
 export const InputBox = styled.div`
     position: relative;
-    margin-top: -10px;
 `
 
 export const InputBoxInput = styled.input`
