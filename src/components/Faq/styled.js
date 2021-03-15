@@ -32,6 +32,7 @@ export const AcordeonLink = styled.a`
 `
 export const IconAdd = styled(MessageAltAdd)`
     min-width: 32px;
+    height: 32px;
     color: #282828;
     
 `
