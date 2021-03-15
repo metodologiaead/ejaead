@@ -1,0 +1,17 @@
+backend:
+  name: github
+  repo: metodologiaead/licenciatura
+
+publish_mode: editorial_workflow
+
+media_folder: "/src/images"
+public_folder: "/images"
+
+
+collections:
+  - label: "Valor"
+    name: "valor"
+    folder: "valor"
+    create: true
+    fields:
+      - {label: "valor_novo", name: "valor_novo", widget: "string"}
