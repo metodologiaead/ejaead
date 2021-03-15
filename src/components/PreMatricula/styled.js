@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import media from 'styled-media-query'
 
 export const Container = styled.section`
     display: flex;
@@ -17,6 +16,55 @@ export const Container = styled.section`
         max-width: 1024px;
         min-height: 100vh;
     }
+
+    form {
+        width: 720px;
+        height: auto;
+    }
+
+    .cepLogradouroNumero {
+        display: grid;
+        grid-template-columns: 130px auto 100px;
+        gap: 20px;
+
+        margin-top: 10px;
+    }
+
+    .identidadeCPF {
+        display: grid;
+        grid-template-columns: auto 180px;
+        gap: 20px;
+    }
+
+    .EscolaridadeCursoSexo {
+        display: grid;
+        grid-template-columns: auto auto 120px;
+        gap: 20px;
+    }
+
+    .maePai {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 20px;
+    }
+
+    .nascimentoNaturalidadeUf {
+        display: grid;
+        grid-template-columns: 220px auto 70px;
+        gap: 20px;
+    }
+    
+    .paisNacionalidade {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 20px;
+    }
+
+    .ufBairroCidade {
+        display: grid;
+        grid-template-columns: auto auto 70px;
+        gap: 20px;
+    }
 `
 
 export const Form = styled.form`
@@ -29,7 +77,8 @@ export const InputBox = styled.div`
 `
 
 export const InputBoxInput = styled.input`
-    width: 290px;
+    width: 100%;
+    height: auto;
     padding: 15px 0;
     font-size: max(13px, 1.5vw);
     margin-bottom: 15px;
@@ -38,11 +87,6 @@ export const InputBoxInput = styled.input`
     border-bottom: 1px solid var(--grey-color);
     outline: none;
     background: transparent;
-
-    ${media.lessThan("small")`
-    width: 250px;
-  `}
-
     `
 
 export const Label = styled.label`
@@ -86,3 +130,4 @@ export const InputSubmit = styled.input`
         background-position: right
     }
 `
+
