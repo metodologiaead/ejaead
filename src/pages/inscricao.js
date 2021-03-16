@@ -1,14 +1,14 @@
 import React from "react"
 import Layout from "../components/Layout"
-import PreMatricula from '../components/PreMatricula'
+import Inscricao from '../components/Inscricao'
 
 import SEO from "../components/seo"
 
-const PreMatriculaPage = () => (
+const InscricaoPage = () => (
   <Layout>
     <SEO title="Pré-Matricula" />
-    <PreMatricula />
+    <Inscricao />
   </Layout>
 )
 
-export default PreMatriculaPage
+export default InscricaoPage

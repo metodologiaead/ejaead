@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 
+
 export const Container = styled.section`
     display: flex;
     flex: 1;
@@ -20,6 +21,25 @@ export const Container = styled.section`
     form {
         width: 720px;
         height: auto;
+
+    }
+
+    .tituloFicha {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        img {
+            width: 150px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
     }
 
     .cepLogradouroNumero {
@@ -63,6 +83,18 @@ export const Container = styled.section`
     .ufBairroCidade {
         display: grid;
         grid-template-columns: auto auto 70px;
+        gap: 20px;
+    }
+
+    .telResidComerCel {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        gap: 20px;
+    }
+
+    .areasInteresse {
+        display: grid;
+        grid-template-columns: auto auto;
         gap: 20px;
     }
 `

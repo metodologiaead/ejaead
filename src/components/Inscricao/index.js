@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import MaskedInput from 'react-text-mask'
 import { Container, InputBox, InputBoxInput, Label, InputSubmit } from './styled'
+import Logo from '../../images/logo-metodologia-ead.png'
 
-
-const PreMatricula = () => {
+const Inscricao = () => {
 
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
-    const [phone, setPhonenumber,] = useState("");
     const [cep, setCep] = useState("");
     const [logradouro, setLogradouro,] = useState("");
     const [numero, setNumero] = useState("");
@@ -26,6 +25,13 @@ const PreMatricula = () => {
     const [bairro, setBairro] = useState("");
     const [cidade, setCidade] = useState("");
     const [uf, setUf] = useState("");
+    const [telefonecomercial, setTelefonecomercial] = useState("");
+    const [telefoneresidencial, setTelefoneresidencial] = useState("");
+    const [telefonecelular, setTelefonecelular] = useState("");
+    const [area01, setArea01] = useState("");
+    const [area02, setArea02] = useState("");
+    const [area03, setArea03] = useState("");
+    const [area04, setArea04] = useState("");
 
     const handleSubmit = (evt) => {
 
@@ -41,10 +47,6 @@ const PreMatricula = () => {
                 {
                     "name": "firstname",
                     "value": name
-                },
-                { 
-                    "name": "phone",
-                    "value": phone
                 },
                 { 
                     "name": "cep",
@@ -114,6 +116,34 @@ const PreMatricula = () => {
                     "name": "uf",
                     "value": uf
                 },
+                { 
+                    "name": "telefonecomercial",
+                    "value": telefonecomercial
+                },
+                { 
+                    "name": "telefoneresidencial",
+                    "value": telefoneresidencial
+                },
+                { 
+                    "name": "telefonecelular",
+                    "value": telefonecelular
+                },
+                { 
+                    "name": "area01",
+                    "value": area01
+                },
+                { 
+                    "name": "area02",
+                    "value": area02
+                },
+                { 
+                    "name": "area03",
+                    "value": area03
+                },
+                { 
+                    "name": "area04",
+                    "value": area04
+                },
             ],
             "context": {
                 "pageUri": "https://ejaead.metodologiaead.com.br",
@@ -163,8 +193,11 @@ const PreMatricula = () => {
 
     return (
         <Container>
-            <div className="content">
-        
+        <div className="content">
+        <div className="tituloFicha">
+            <img src={Logo} alt="Logo Metodologia EAD" />
+            <h2>Ficha de Inscrição EJA EAD</h2>
+        </div>
         <form onSubmit={handleSubmit}>
             <InputBox>
                 <InputBoxInput 
@@ -174,18 +207,6 @@ const PreMatricula = () => {
                 required
                 />
                 <Label>Nome Completo</Label>
-            </InputBox>
-            <InputBox>
-                <MaskedInput mask={['(', /[1-9]/, /\d/, ')', ' ', /\d/, /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]}
-                type="tel"
-                value={phone}
-                onChange={e => setPhonenumber(e.target.value)}
-                required
-                render={(ref, props) => (
-                    <InputBoxInput ref={ref} {...props} />
-                  )}
-                />
-                <Label>Telefone</Label>
             </InputBox>
             <div className="identidadeCPF">
                 <InputBox>
@@ -385,6 +406,103 @@ const PreMatricula = () => {
                 />
                 <Label>Email</Label>
             </InputBox>
+            <div className="telResidComerCel">
+                <InputBox>
+                    <MaskedInput mask={['(', /[1-9]/, /\d/, ')', ' ', /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]}
+                    type="tel"
+                    value={telefonecomercial}
+                    onChange={e => setTelefonecomercial(e.target.value)}
+                    required
+                    render={(ref, props) => (
+                        <InputBoxInput ref={ref} {...props} />
+                    )}
+                    />
+                    <Label>Telefone Comercial</Label>
+                </InputBox>
+                <InputBox>
+                    <MaskedInput mask={['(', /[1-9]/, /\d/, ')', ' ', /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]}
+                    type="tel"
+                    value={telefoneresidencial}
+                    onChange={e => setTelefoneresidencial(e.target.value)}
+                    required
+                    render={(ref, props) => (
+                        <InputBoxInput ref={ref} {...props} />
+                    )}
+                    />
+                    <Label>Telefone Residencial</Label>
+                </InputBox>
+                <InputBox>
+                    <MaskedInput mask={['(', /[1-9]/, /\d/, ')', ' ', /\d/, /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]}
+                    type="tel"
+                    value={telefonecelular}
+                    onChange={e => setTelefonecelular(e.target.value)}
+                    required
+                    render={(ref, props) => (
+                        <InputBoxInput ref={ref} {...props} />
+                    )}
+                    />
+                    <Label>Telefone Celular</Label>
+                </InputBox>
+            </div>
+            <p>Qual(is) outra(s) área(s) de curso(s) que você tem interesse?</p>
+            <p style={{marginBottom: 10, marginTop: 10}}>(Exemplo: Saúde, Educação, Economia, Artes, Direito...)</p>
+            <div className="areasInteresse">
+                <InputBox>
+                    <InputBoxInput 
+                    type="text" 
+                    value={area01}
+                    onChange={e => setArea01(e.target.value)}
+                    required
+                    />
+                    <Label>Área 01</Label>
+                </InputBox>
+                <InputBox>
+                    <InputBoxInput 
+                    type="text" 
+                    value={area02}
+                    onChange={e => setArea02(e.target.value)}
+                    required
+                    />
+                    <Label>Área 02</Label>
+                </InputBox>
+            </div>
+            <div className="areasInteresse">
+                <InputBox>
+                    <InputBoxInput 
+                    type="text" 
+                    value={area03}
+                    onChange={e => setArea03(e.target.value)}
+                    required
+                    />
+                    <Label>Área 03</Label>
+                </InputBox>
+                <InputBox>
+                    <InputBoxInput 
+                    type="text" 
+                    value={area04}
+                    onChange={e => setArea04(e.target.value)}
+                    required
+                    />
+                    <Label>Área 04</Label>
+                </InputBox>
+            </div>
+            <p>OBS:  O cancelamento da inscrição com devolução de taxa somente será feito até 2 dias úteis antes do início do curso.</p>
+            <hr />
+            <div>
+                <h2>Documentos Necessários</h2>
+                <p>Ao Finalizar a inscrição enviar os seguintes documentos via whatsapp;</p>
+                <ul style={{marginTop: 10}}>
+                <li>• RG</li>
+                <li>• CPF</li>
+                <li>• TITULO ELEITORAL</li>
+                <li>• COMPROVANTE DE RESIDÊNCIA</li>
+                <li>• 02 FOTOS ¾</li>
+                </ul>
+                <p style={{marginTop: 10}}>Enviar para secretaria Whatsapp = (82) 98719-5545</p>
+                <hr></hr>
+                <p>OBS: O CERTIFICADO SÓ SERÁ ENTREGUE COM A CÓPIA DE TODOS OS DOCUMENTOS 
+                ENTREGUES NO INSTITUTO</p>
+            </div>
             <InputSubmit 
             type="submit" 
             value="Enviar"
@@ -395,4 +513,4 @@ const PreMatricula = () => {
     );
 }
 
-export default PreMatricula
+export default Inscricao
