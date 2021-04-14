@@ -32,6 +32,7 @@ const Inscricao = () => {
     const [area02, setArea02] = useState("");
     const [area03, setArea03] = useState("");
     const [area04, setArea04] = useState("");
+    const [complemento, setComplemento] = useState("");
 
     const handleSubmit = (evt) => {
 
@@ -65,14 +66,6 @@ const Inscricao = () => {
                     "value": identidade
                 },
                 { 
-                    "name": "escolaridade",
-                    "value": escolaridade
-                },
-                { 
-                    "name": "curso",
-                    "value": curso
-                },
-                { 
                     "name": "sexo",
                     "value": sexo
                 },
@@ -95,10 +88,6 @@ const Inscricao = () => {
                 { 
                     "name": "ufnaturalidade",
                     "value": ufnaturalidade
-                },
-                { 
-                    "name": "pais",
-                    "value": pais
                 },
                 { 
                     "name": "nacionalidade",
@@ -143,6 +132,10 @@ const Inscricao = () => {
                 { 
                     "name": "area04",
                     "value": area04
+                },
+                { 
+                    "name": "complemento",
+                    "value": complemento
                 },
             ],
             "context": {
@@ -235,24 +228,6 @@ const Inscricao = () => {
             <div className="EscolaridadeCursoSexo">
                 <InputBox>
                     <InputBoxInput 
-                    type="text" 
-                    value={escolaridade}
-                    onChange={e => setEscolaridade(e.target.value)}
-                    required
-                    />
-                    <Label>Nível de Escolaridade</Label>
-                </InputBox>
-                <InputBox>
-                    <InputBoxInput 
-                    type="text" 
-                    value={curso}
-                    onChange={e => setCurso(e.target.value)}
-                    required
-                    />
-                    <Label>Curso</Label>
-                </InputBox>
-                <InputBox>
-                    <InputBoxInput 
                     type="text"
                     value={sexo}
                     onChange={e => setSexo(e.target.value)}
@@ -314,15 +289,6 @@ const Inscricao = () => {
                 <InputBox>
                     <InputBoxInput 
                     type="text" 
-                    value={pais}
-                    onChange={e => setPais(e.target.value)}
-                    required
-                    />
-                    <Label>País</Label>
-                </InputBox>
-                <InputBox>
-                    <InputBoxInput 
-                    type="text" 
                     value={nacionalidade}
                     onChange={e => setNacionalidade(e.target.value)}
                     required
@@ -365,6 +331,14 @@ const Inscricao = () => {
                     <Label>Número</Label>
                 </InputBox>
             </div>
+            <InputBox>
+                    <InputBoxInput 
+                    type="text" 
+                    value={complemento}
+                    onChange={e => setBairro(e.target.value)}
+                    />
+                    <Label>Complemento</Label>
+                </InputBox>
             <div className="ufBairroCidade">
                 <InputBox>
                     <InputBoxInput 
@@ -408,30 +382,6 @@ const Inscricao = () => {
             </InputBox>
             <div className="telResidComerCel">
                 <InputBox>
-                    <MaskedInput mask={['(', /[1-9]/, /\d/, ')', ' ', /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]}
-                    type="tel"
-                    value={telefonecomercial}
-                    onChange={e => setTelefonecomercial(e.target.value)}
-                    required
-                    render={(ref, props) => (
-                        <InputBoxInput ref={ref} {...props} />
-                    )}
-                    />
-                    <Label>Telefone Comercial</Label>
-                </InputBox>
-                <InputBox>
-                    <MaskedInput mask={['(', /[1-9]/, /\d/, ')', ' ', /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]}
-                    type="tel"
-                    value={telefoneresidencial}
-                    onChange={e => setTelefoneresidencial(e.target.value)}
-                    required
-                    render={(ref, props) => (
-                        <InputBoxInput ref={ref} {...props} />
-                    )}
-                    />
-                    <Label>Telefone Residencial</Label>
-                </InputBox>
-                <InputBox>
                     <MaskedInput mask={['(', /[1-9]/, /\d/, ')', ' ', /\d/, /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]}
                     type="tel"
                     value={telefonecelular}
@@ -443,6 +393,30 @@ const Inscricao = () => {
                     />
                     <Label>Telefone Celular</Label>
                 </InputBox>
+                <InputBox>
+                    <MaskedInput mask={['(', /[1-9]/, /\d/, ')', ' ', /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]}
+                    type="tel"
+                    value={telefoneresidencial}
+                    onChange={e => setTelefoneresidencial(e.target.value)}
+                    required={null}
+                    render={(ref, props) => (
+                        <InputBoxInput ref={ref} {...props} />
+                    )}
+                    />
+                    <Label>Telefone Residencial</Label>
+                </InputBox>
+                <InputBox>
+                    <MaskedInput mask={['(', /[1-9]/, /\d/, ')', ' ', /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]}
+                    type="tel"
+                    value={telefonecomercial}
+                    onChange={e => setTelefonecomercial(e.target.value)}
+                    required={null}
+                    render={(ref, props) => (
+                        <InputBoxInput ref={ref} {...props} />
+                    )}
+                    />
+                    <Label>Telefone Comercial</Label>
+                </InputBox>
             </div>
             <p>Qual(is) outra(s) área(s) de curso(s) que você tem interesse?</p>
             <p style={{marginBottom: 10, marginTop: 10}}>(Exemplo: Saúde, Educação, Economia, Artes, Direito...)</p>
@@ -452,7 +426,6 @@ const Inscricao = () => {
                     type="text" 
                     value={area01}
                     onChange={e => setArea01(e.target.value)}
-                    required
                     />
                     <Label>Área 01</Label>
                 </InputBox>
@@ -461,7 +434,6 @@ const Inscricao = () => {
                     type="text" 
                     value={area02}
                     onChange={e => setArea02(e.target.value)}
-                    required
                     />
                     <Label>Área 02</Label>
                 </InputBox>
@@ -472,7 +444,6 @@ const Inscricao = () => {
                     type="text" 
                     value={area03}
                     onChange={e => setArea03(e.target.value)}
-                    required
                     />
                     <Label>Área 03</Label>
                 </InputBox>
@@ -481,7 +452,6 @@ const Inscricao = () => {
                     type="text" 
                     value={area04}
                     onChange={e => setArea04(e.target.value)}
-                    required
                     />
                     <Label>Área 04</Label>
                 </InputBox>
@@ -498,16 +468,22 @@ const Inscricao = () => {
                 <li>• COMPROVANTE DE RESIDÊNCIA</li>
                 <li>• 02 FOTOS ¾</li>
                 </ul>
-                <p style={{marginTop: 10}}>Enviar para secretaria Whatsapp = (82) 98719-5545</p>
+                <p style={{marginTop: 10}}>Enviar para secretaria via whatsapp para = (82) 98719-5545</p>
                 <hr></hr>
                 <p>OBS: O CERTIFICADO SÓ SERÁ ENTREGUE COM A CÓPIA DE TODOS OS DOCUMENTOS 
-                ENTREGUES NO INSTITUTO</p>
+                ENTREGUES</p>
             </div>
             <InputSubmit 
             type="submit" 
             value="Enviar"
             />
         </form>
+        </div>
+        <div className="FooterInscricao">
+        <p>Sistema de Ensino Educa Mais Ltda está localizado na Av. Piauí, 075 – Bairro dos Estados, no
+            município João Pessoa - PB, CEP 58.030-330
+            CNPJ 33.176.748/0001-07
+        </p>
         </div>
         </Container>
     );

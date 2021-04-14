@@ -97,6 +97,21 @@ export const Container = styled.section`
         grid-template-columns: auto auto;
         gap: 20px;
     }
+
+    .FooterInscricao {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        text-align: center;
+
+        width: 100%;
+        height: 100px;
+
+        p {
+            padding: 0 150px;
+        }
+    }
 `
 
 export const Form = styled.form`

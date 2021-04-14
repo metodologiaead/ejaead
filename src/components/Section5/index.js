@@ -20,7 +20,7 @@ const Section5 = () => {
                         </S.HerderCard>
                         <h3>Plano de Pagamento</h3>
                         <h4>Material Didático Online</h4>
-                        <p>Valor contratual de <br/> <span>6x de R$ 150,00</span></p>
+                        <p>Valor contratual de <br/> <span>6x de R$ 135,00</span></p>
                         <img src={ArrowRight} alt="Seta Para Direita" />
                     </S.Card>
                </S.CardWrapper>
