@@ -36,7 +36,7 @@ export const Label = styled.label`
     top: 0;
     left: 0;
     padding: 10px 0;
-    font-size: max(13px, 1.5vw);
+    font-size: max(13px, 1.2vw);
     color: var(--grey-color);
     pointer-events: none;
     transition: .5s;
@@ -46,7 +46,11 @@ export const Label = styled.label`
         top: -18px;
         left: 0%;
         color: #282828;
-        font-size: max(13px, 1.5vw);
+        font-size: max(13px, 1.2vw);
+  }
+
+  span {
+      font-size: 12px;
   }
 
 `

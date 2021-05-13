@@ -103,7 +103,7 @@ const Subscribe = () => {
                     <InputBoxInput ref={ref} {...props} />
                   )}
                 />
-                <Label>Código do Consultor ( opcional )</Label>
+                <Label>Código do Consultor <span>( opcional )</span></Label>
             </InputBox>
             <InputSubmit 
             type="submit" 

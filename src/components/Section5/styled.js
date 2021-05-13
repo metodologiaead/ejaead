@@ -1,14 +1,13 @@
-import styled from 'styled-components'
+import styled from "styled-components"
 import media from "styled-media-query"
 
-
 export const Section = styled.div`
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
 
-    ${media.lessThan("small")`
+  ${media.lessThan("small")`
       height: auto;
       margin-bottom: 50px;
   `}
@@ -21,13 +20,12 @@ export const Container = styled.div`
   align-items: center;
   max-width: 1140px;
   height: 100vh;
-  margin:0 auto;
+  margin: 0 auto;
 
   ${media.lessThan("small")`
   flex-direction: column;
   height: auto;
   `}
-
 `
 
 export const InfoWrapper = styled.div`
@@ -40,6 +38,7 @@ export const InfoWrapper = styled.div`
   ${media.lessThan("small")`
     width: 100%;
     padding: 0 30px;
+    margin-top: 50px;
   `}
 `
 
@@ -48,7 +47,7 @@ export const CardWrapper = styled.div`
   justify-content: center;
   align-items: center;
   width: 50%;
-  height: 600px;
+  height: auto;
 
   ${media.lessThan("small")`
     width: 100%;
@@ -60,7 +59,7 @@ export const Card = styled.div`
   flex-direction: column;
   align-items: center;
   width: 366px;
-  height: 495px;
+  height: auto;
   margin: 0 10px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 
               0 6px 6px rgba(0,0,0,0.23);
@@ -82,20 +81,21 @@ export const Card = styled.div`
   
   p {
     font-size: max(13px, 1.5vw);
-    margin: 32px auto;
+    margin: 20px auto;
     text-align: center;
     color: var(--color-text); 
+    width: 90%;
   }
 
   p > span {
-    font-size: max(18px, 3vw);
+    font-size: max(18px, 2vw);
     text-align: center;
     font-weight: 700;
-    color: var(--color-text); 
+    color: var(--color-text);
   }
 
   img {
-    width: 100px;
+    width: 50px;
     height: auto;
   }
 
@@ -122,13 +122,13 @@ export const HerderCard = styled.div`
   text-align: center;
   width: 100%;
   height: 80px;
-  background-color: #03658C;
-  border-radius: 10px 10px 0 0 ;
+  background-color: #03658c;
+  border-radius: 10px 10px 0 0;
 
   h2 {
     font-size: max(13px, 2vw);
     font-weight: 700;
-    color: #ffD000;
+    color: #ffd000;
   }
 
   h2 > span {
