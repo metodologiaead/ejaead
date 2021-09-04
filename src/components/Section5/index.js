@@ -22,11 +22,11 @@ const Section5 = () => {
             <h4>Material Didático Online</h4>
             <div>
               <p>
-                <span>6x de R$ 145,00</span> no cartão de crédito <br />
+                <span>6x de R$ 150,00</span> no cartão de crédito <br />
               </p>
               <p>ou</p>
               <p>
-                <span>2x de R$ 375,00</span> no boleto bancário <br />
+                <span>2x de R$ 385,00</span> no boleto ou cartão de crédito<br />
               </p>
             </div>
             <img src={ArrowRight} alt="Seta Para Direita" />
